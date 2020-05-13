@@ -17,7 +17,7 @@ git clone https://github.com/chaturvediabhay24/tf_cnn_model_load_testing.git
 ```
 Change the directory.
 ```shell
-cd tf_rnn_model_load_testing
+cd tf_cnn_model_load_testing
 ```
 Install dependencies.
 ```shell
