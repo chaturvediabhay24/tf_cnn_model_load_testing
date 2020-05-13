@@ -1,6 +1,6 @@
 # tf_cnn_model_load_testing
 ### create virtual environment using :
-'''
+'''shell
 virtualenv <env_name>
 '''
 ### change the directory
