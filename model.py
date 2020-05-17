@@ -19,7 +19,7 @@ IMAGE_RES=224
 with open("imagenet_labels", "rb") as fp:   
   imagenet_labels=pickle.load( fp)
 
-global model
+# global model
 sess=tf.compat.v1.Session()
 set_session(sess)
 
@@ -28,7 +28,7 @@ model=tf.keras.applications.VGG16(
     pooling=None, classes=1000, classifier_activation='softmax'
 )
 
-global graph
+# global graph
 graph =  tf.compat.v1.get_default_graph()
 
 def predictor(img = tf.keras.utils.get_file('image.jpg','https://storage.googleapis.com/download.tensorflow.org/example_images/grace_hopper.jpg')):
@@ -36,8 +36,8 @@ def predictor(img = tf.keras.utils.get_file('image.jpg','https://storage.googlea
 	img = np.array(img)/255.0
 	img = img[:, :, :3]
 
-	global sess
-	global graph
+# 	global sess
+# 	global graph
 
 	with graph.as_default():
 		set_session(sess)
