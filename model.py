@@ -1,4 +1,7 @@
 import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 import pickle
 import numpy as np
 import PIL.Image as Image
@@ -17,14 +20,14 @@ with open("imagenet_labels", "rb") as fp:
   imagenet_labels=pickle.load( fp)
 
 global model
-sess=tf.Session()
+sess=tf.compat.v1.Session()
 set_session(sess)
 
-model=tf.keras.applications.MobileNet(
-    input_shape=None, alpha=1.0, depth_multiplier=1, dropout=0.001,
-    include_top=True, weights='imagenet', input_tensor=None, pooling=None,
-    classes=1000
+model=tf.keras.applications.VGG16(
+    include_top=True, weights='imagenet', input_tensor=None, input_shape=None,
+    pooling=None, classes=1000, classifier_activation='softmax'
 )
+
 global graph
 graph =  tf.compat.v1.get_default_graph()
 
