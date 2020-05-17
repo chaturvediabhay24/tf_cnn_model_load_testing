@@ -1,4 +1,4 @@
-# tf_rnn_model_load_testing
+# tf_cnn_model_load_testing
 
 ### How it works?
 
@@ -23,10 +23,12 @@ Install dependencies.
 ```shell
 pip install -r requirements.txt
 ```
-Run these two command parallely in two different shells.
+
+To start the server run the following command.
 ```shell
-python app.py
+gunicorn app:app -b localhost:5000 &
 ```
+To start the testing environment run the following command
 ```shell
 locust
 ```
